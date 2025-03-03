@@ -22,7 +22,26 @@
   font-weight: 500;
   font-style: normal;
 }
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+
 body{
+  width: 100%;
   display: flex;
   justify-content: center;
 }
@@ -31,20 +50,20 @@ body{
   width: 70%;
   justify-content: center;
   align-items: center;
-  padding: 0 3.75rem;
+  position: relative;
 }
 
 
 .nav-bar{
   width: 100%;
   font-family:"nb-architek-pro";
-  position: sticky;
+  position: absolute;
   font-size:  1.625rem;
   font-weight: 400;
   display:flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 1.5rem;
+  top:0;
   z-index: 100;
 }
 
@@ -55,19 +74,22 @@ body{
 .nav-left-section{
   
   display: flex;
-  width: 20rem;
+  width: 20%;
   justify-content: space-evenly; 
 }
 
 .nav-right-section{
   display: flex;
-  width: 20rem;
+  width: 20%;
   justify-content: space-evenly;
 }
-.nav-bio-button,.nav-work-button,.nav-github-button,.nav-contact-button{
-padding-left: 5px;
-padding-right: 5px;
+.nav-github-button{
+  margin-right: 1.8125rem;
 }
+.nav-bio-button{
+  margin-right: 1.8125rem;
+}
+
 
 .nav-bio-button:hover,.nav-work-button:hover,.nav-github-button:hover,.nav-contact-button:hover{
   color: white;
@@ -76,17 +98,19 @@ padding-right: 5px;
 }
 
 .hero-container{
+  width: 100%;
   display: flex;
   flex-direction: column;
   margin-bottom: 12.5rem;
 }
 .hero-img-container{
   margin-top: -60px;
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
+
 .hero-background-img{
   width: 30.125rem;
   height: 45.375rem;
@@ -95,7 +119,7 @@ padding-right: 5px;
 .hero-overlay-img{
   position: absolute;
   bottom: 0;
-  height: 43rem;
+  height: 40.8rem;
 }
 .hero-straight-line{
   width: 100%;
@@ -106,6 +130,7 @@ padding-right: 5px;
   border-color: white;
   border-style: solid;
   position: absolute;
+  top: 401px;
 }
 .hero-intro-text{
   font-family:"neue-montreal" ;
@@ -137,6 +162,12 @@ padding-right: 5px;
   font-size: 2.5rem;
   margin-bottom: 5.875rem;
 }
+.about-text-span{
+  padding-left: 6.25rem;
+  font-family: "nb-architek-pro";
+  font-weight: 700;
+}
+
 .about-sub-section{
   display: flex;
 }
@@ -205,22 +236,29 @@ padding-right: 5px;
 
 .project-container{
   display: flex;
+  justify-content: space-between;
+  
   align-items: center;
 }
 .myprojects-img-container{
-  background-color: lightgrey;
-  width:53rem ;
-  height:29.94rem;
+  height:68%;
+  width: 68%;
+  aspect-ratio: 4/3; 
+  background-color: rgb(255, 0, 0);
+  object-fit: cover;
+  vertical-align: middle;
+
 }
 .myprojects-img{
   width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 .slider-bar{
   display: flex;
   border-style: solid;
   border-width: 1px;
-  width: 11rem;
+  width: 11em;
   justify-content: space-around;
 }
 .slider-button{
@@ -251,9 +289,9 @@ margin: 0.23rem;
 .work-with-me-text{
   font-family:"nb-architek-pro";
   font-weight: 700;
-  font-size: 6.1rem;
+  font-size: 5rem;
   text-align: center;
-  line-height: 5.5rem;
+  line-height: 5.5rem
 }
 
 .lets-work-container{
@@ -287,27 +325,24 @@ margin: 0.23rem;
   font-family:"nb-architek-pro";
   display: flex;
   font-size: 0.875rem;
+  font-weight: 700;
   align-items: center;
   width: 100%;
   justify-content: space-between;
-  border-top: 2px solid;
+  /* border-top: 2px solid; */
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
 }
 .footer-left-section{
-  padding-left: 3.75rem;
+
   gap:0.625rem;
   display: flex;
-  justify-content: space-around;
   align-items: center;
 }
 
 .footer-middle-section{
   display: flex;
   margin-right: 3.5rem;
-}
-.footer-right-section{
-  padding-right: 3.75rem;
 }
 .footer-links{
   padding:0 1.25rem;
@@ -318,3 +353,55 @@ margin: 0.23rem;
 .footer-logo{
   margin-top: 0.3125rem;
 }
+
+@media (min-width: 400px) and (max-width: 75em) {
+  .hero-intro-text{
+    font-size: 3.2rem ;
+    margin-top: 1rem;
+  }
+
+  .hero-container{
+    margin-bottom: 5rem;
+  }
+  
+  .about-section-heading{
+    margin-bottom: 2rem;
+  }
+
+
+   .about-section-img{
+    width: 20rem;
+  }
+
+  .about-sub-section-text{
+    margin-left: 4.89rem;
+
+  }
+  .about-contact-container{
+    margin-left: 4.89rem;
+}
+  .about-section-container{
+    margin-bottom: 8rem;
+  }
+
+  .select-work-head{
+    margin-bottom:4rem; 
+  }
+
+  .myprojects-section{
+    margin-bottom: 8rem;
+  }
+
+  .work-with-me{
+    margin-bottom:3rem;
+  }
+  .work-with-me-text{
+    font-size:3.8rem ;
+    line-height: 4rem;
+  }
+  #footer{
+    font-size: 0.8rem;
+  }
+}
+
+

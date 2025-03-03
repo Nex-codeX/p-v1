@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PortFolio</title>
   <link rel="stylesheet" href="./styles.css">
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
 </head>
 <body>
  <div class="main-container">
@@ -27,23 +28,24 @@
 
   <div class="hero-container">
     <div class="hero-img-container">
-      <img class="hero-background-img" src="./assets/hero-image.webp" alt="">
-      <img class="hero-overlay-img" src="./assets/hero-symbol.svg" alt="">
-    <div class="hero-straight-line"></div>
+      <div class="mask"></div>
+        <img class="hero-background-img" src="./assets/hero-image.webp" alt="">
+        <img class="hero-overlay-img" src="./assets/hero-symbol.svg" alt="">
+        <div class="hero-straight-line"></div>
   </div>
     <div class="hero-intro-text"><p>Hey. I'm Anantha [<span class="hero-text-span">NEX</span>] Krishnan <br>A 29 years old creative web developer <br> Hailing from <img class="hero-symbol" src="./assets/hero-symbol-new.svg" alt=""> KL, India.</p></div>
   </div>
 
 <div class="about-section-container">
   <div class="about-section-heading">About</div>
-  <div class="about-sub-text"> <p>
+  <div class="about-sub-text"><p>
     <span class="about-text-span">Curious</span>, observant, and amazed by the <br> beauty of magic and websites, a strong taste <br>for challenges and a hunger to experience <br> them intensely.
   </p></div>
   <div class="about-sub-section">
     <div class="about-img-container"> <img class="about-section-img" src="./assets/about-symbol.svg" alt=""> </div>
     <div>
-      <div class="about-sub-section-text"><p>Driven by the desire to create unique and memorable digital experiences, I’ve built a career in creative development—bringing pixels to life with style and purpose. </p> <br> <p>Recognized for my sense of smooth animations and engaging interactions, I’ve had the chance to work with amazing companies worldwide. 
-        Check out my work and see where this journey has taken me.</p></div>
+      <div class="about-sub-section-text"><div>Driven by the desire to create unique and memorable digital experiences, I’ve built a career in creative development—bringing pixels to life with style and purpose.</div>  <br> <div>Recognized for my sense of smooth animations and engaging interactions, I’ve had the chance to work with amazing companies worldwide. 
+        Check out my work and see where this journey has taken me.</div></div>
       <div class="about-contact-container"><span class="about-contact-text">Contact</span> <br>
       <span class="nexnexorious">Nex@nexorious.com</span></div>
     </div>
@@ -51,7 +53,7 @@
   </div>
 </div>
 
-<div class="myprojects-section">
+<!-- <div class="myprojects-section">
 <div class="select-work-head">Selected <span class="project-number-text"> 5 </span> work</div>
 <div class="project-container">
   <div class="project-head-and-contents">
@@ -65,9 +67,9 @@
       <div class="slider-button"></div>
     </div>
   </div>
-<div class="myprojects-img-container"><img class="myprojects-img" src="" alt=""></div>
+<div class="myprojects-img-container"><img class="myprojects-img" src="./assets/host.Ccvkoi_C_Z1A3Enn.webp" alt=""></div>
 </div>
-</div>
+</div> -->
 
 <div class="work-with-me-section">
 <div class="work-with-me">Work With Me</div>
@@ -98,5 +100,23 @@
 </div>
 
  </div> 
+ <script>
+  const lenis = new Lenis({
+    duration: 1.1,
+    easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
+    direction: "vertical",
+    smooth: true,
+    smoothTouch: false,
+    touchMultiplier: 2,
+  });
+  
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  
+  requestAnimationFrame(raf);
+  </script>
+  
 </body>
 </html>
